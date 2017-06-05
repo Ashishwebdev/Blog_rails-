@@ -4,8 +4,14 @@
 </h1>
 <p class="date">
   Submitted <%= time_ago_in_words(@post.created_at)%> Ago
+  <div class="btn-grp">
+    <%= link_to 'Destroy', @post, method: :delete, data:{confirm: 'Are you sure'}, class:"btn btn-default" %>
+    |
+    <%= link_to 'Edit', edit_post_path(@post)%>
+  </div>
 
 <p class="body">
   <%= @post.body %>
 </p>
+
 </div>
